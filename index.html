@@ -105,7 +105,7 @@
       <main class="content">
 
         <h1 id="http4s-jdk-http-client" class="title">http4s-jdk-http-client</h1>
-        <p><a href="https://github.com/http4s/http4s-jdk-http-client/actions"><img src="https://github.com/http4s/http4s-jdk-http-client/workflows/CI/badge.svg?branch=master" alt="Build Status"></a> <a href="https://maven-badges.herokuapp.com/maven-central/org.http4s/http4s-jdk-http-client_3"><img src="https://maven-badges.herokuapp.com/maven-central/org.http4s/http4s-jdk-http-client_3/badge.svg" alt="Maven Central"></a> <a href="https://javadoc-badge.appspot.com/org.http4s/http4s-jdk-http-client_3"><img src="https://javadoc-badge.appspot.com/org.http4s/http4s-jdk-http-client_3.svg?label=scaladoc" alt="Scaladoc"></a></p>
+        <p><a href="https://github.com/http4s/http4s-jdk-http-client/actions"><img src="https://github.com/http4s/http4s-jdk-http-client/workflows/CI/badge.svg?branch=master" alt="Build Status"></a> <a href="https://maven-badges.herokuapp.com/maven-central/org.http4s/http4s-jdk-http-client_2.13"><img src="https://maven-badges.herokuapp.com/maven-central/org.http4s/http4s-jdk-http-client_2.13/badge.svg" alt="Maven Central"></a> <a href="https://javadoc.io/doc/org.http4s/http4s-jdk-http-client_2.13"><img src="https://javadoc.io/badge2/org.http4s/http4s-jdk-http-client_2.13/javadoc.svg" alt="javadoc"></a></p>
         
         <h2 id="http-client" class="section">HTTP client<a class="anchor-link right" href="#http-client"><i class="icofont-laika">&#xef71;</i></a></h2>
         <p><code>http4s-jdk-http-client</code> contains a <a href="https://http4s.org/v0.23/client/">http4s-client</a> implementation based on
@@ -174,7 +174,7 @@
 </span><span class="identifier">client</span><span>
   .</span><span class="identifier">use</span><span>(</span><span class="identifier">c</span><span> =&gt; </span><span class="identifier">fetchStatus</span><span>(</span><span class="identifier">c</span><span>, </span><span class="string-literal">uri&quot;https://http4s.org/&quot;</span><span>))
   .</span><span class="identifier">unsafeRunSync</span><span>()
-</span><span class="comment">// res1: Status = Status(200)</span></code></pre>
+</span><span class="comment">// res1: Status = Status(code = 200)</span></code></pre>
         <div class="callout warning">
           <i class="icofont-laika">&#xf026;</i>
           <p><strong>Failure to share.</strong>
@@ -215,8 +215,8 @@
     }
     </span><span class="comment">// in almost all cases, it is better to call `use` instead
 </span><span>    .</span><span class="identifier">allocated</span><span>.</span><span class="identifier">map</span><span>(</span><span class="identifier">_</span><span class="number-literal">._1</span><span>).</span><span class="identifier">unsafeRunSync</span><span>()
-</span><span class="comment">// http: Client[[A &gt;: Nothing &lt;: Any] =&gt; IO[A]] = org.http4s.client.Client$$anon$1@11a02447
-// webSocket: WSClient[[A &gt;: Nothing &lt;: Any] =&gt; IO[A]] = org.http4s.client.websocket.WSClient$$anon$7@40c29d65</span></code></pre>
+</span><span class="comment">// http: Client[IO] = org.http4s.client.Client$$anon$1@689504b1
+// webSocket: org.http4s.client.websocket.WSClient[IO] = org.http4s.client.websocket.WSClient$$anon$7@4c343088</span></code></pre>
         <p>If you do not need an HTTP client, you can also call <code>JdkWSClient.simple[IO]</code> as above.</p>
         
         <h3 id="overview" class="section">Overview<a class="anchor-link right" href="#overview"><i class="icofont-laika">&#xef71;</i></a></h3>
@@ -276,7 +276,7 @@
     } </span><span class="comment">// the connection is closed here
 </span><span>  }
   .</span><span class="identifier">unsafeRunSync</span><span>()</span></code></pre>
-        <p>For an overview of all options and functions visit the <a href="https://static.javadoc.io/org.http4s/http4s-jdk-http-client_3/0.5.0/org/http4s/jdkhttpclient/index.html">scaladoc</a>.</p>
+        <p>For an overview of all options and functions visit the <a href="https://static.javadoc.io/org.http4s/http4s-jdk-http-client_2.13/0.5.0/org/http4s/jdkhttpclient/index.html">scaladoc</a>.</p>
 
         <!-- custom start - integrate footer, a feature not yet available in Helium -->
         <hr style="margin-top: 30px"/>
