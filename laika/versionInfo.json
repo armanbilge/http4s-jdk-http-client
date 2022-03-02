@@ -1,0 +1,10 @@
+{
+  "versions": [
+    { "displayValue": "0.7.x", "pathSegment": "0.7", "fallbackLink": "/index.html" },
+    { "displayValue": "0.5.x", "pathSegment": "0.5", "fallbackLink": "/index.html" },
+    { "displayValue": "0.4.x", "pathSegment": "0.4", "fallbackLink": "/index.html" }
+  ],
+  "linkTargets": [
+    { "path": "/index.html", "versions": ["0.7"] }
+  ]
+}
