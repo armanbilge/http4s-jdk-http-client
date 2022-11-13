@@ -97,13 +97,51 @@
         
           <li class="level2"><a href="https://github.com/http4s/blaze">blaze</a></li>
         
+          <li class="level2"><a href="https://github.com/http4s/http4s-armeria">http4s-armeria</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-async-http-client">http4s-async-http-client</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-curl/">http4s-curl</a></li>
+        
           <li class="level2"><a href="https://http4s.github.io/http4s-dom/">http4s-dom</a></li>
         
-          <li class="level2"><a href="https://github.com/http4s/rho">rho</a></li>
+          <li class="level2"><a href="https://http4s.github.io/http4s-finagle/docs/">http4s-finagle</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-jetty/">http4s-jetty</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-netty/">http4s-netty</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-okhttp-client/">http4s-okhttp-client</a></li>
+        
+          <li class="level2"><a href="https://http4s.github.io/http4s-servlet/">http4s-servlet</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-tomcat/">http4s-tomcat</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/rho/">rho</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-boopickle/">http4s-boopickle</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-fabric/">http4s-fabric</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-play-json/">http4s-play-json</a></li>
+        
+          <li class="level2"><a href="https://http4s.github.io/http4s-scala-xml/">http4s-scala-xml</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-scala-xml-1/">http4s-scala-xml-1</a></li>
+        
+          <li class="level2"><a href="https://http4s.github.io/http4s-dropwizard-metrics/">http4s-dropwizard-metrics</a></li>
+        
+          <li class="level2"><a href="https://http4s.github.io/http4s-prometheus-metrics/">http4s-prometheus-metrics</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-scalatags/">http4s-scalatags</a></li>
+        
+          <li class="level2"><a href="https://http4s.github.io/http4s-session/">http4s-session</a></li>
+        
+          <li class="level2"><a href="https://github.com/http4s/http4s-twirl/">http4s-twirl</a></li>
         
           <li class="level2"><a href="https://http4s.github.io/sbt-http4s-org/">sbt-http4s-org</a></li>
         
-          <li class="level2"><a href="https://github.com/typelevel/feral">feral</a></li>
+          <li class="level2"><a href="https://github.com/typelevel/feral/">feral</a></li>
         
       </ul>
 
@@ -152,7 +190,7 @@
         <ul>
           <li>Requires Java 11 or greater</li>
           <li>Built for Scala 2.13 and 3</li>
-          <li>Works with http4s-client-1.0.0-M32</li>
+          <li>Works with http4s-client-1.0.0-M37</li>
         </ul>
         <div class="callout warning">
           <i class="icofont-laika">&#xf026;</i>
@@ -247,21 +285,41 @@
     }
     </span><span class="comment">// in almost all cases, it is better to call `use` instead
 </span><span>    .</span><span class="identifier">allocated</span><span>.</span><span class="identifier">map</span><span>(</span><span class="identifier">_</span><span class="number-literal">._1</span><span>).</span><span class="identifier">unsafeRunSync</span><span>()
-</span><span class="comment">// http: Client[IO] = org.http4s.client.Client$$anon$1@b684215
-// webSocket: WSClient[IO] = org.http4s.client.websocket.WSClient$$anon$7@72718afe</span></code></pre>
+</span><span class="comment">// http: Client[IO] = org.http4s.client.Client$$anon$3@3793145a
+// webSocket: WSClient[IO] = org.http4s.client.websocket.WSClient$$anon$7@337ad869</span></code></pre>
         <p>If you do not need an HTTP client, you can also call <code>JdkWSClient.simple[IO]</code> as above.</p>
         
         <h3 id="overview" class="section">Overview<a class="anchor-link right" href="#overview"><i class="icofont-laika">&#xef71;</i></a></h3>
         <p>We have the following websocket frame hierarchy:</p>
         <ul>
-          <li><code>WSFrame</code>
-           - <code>WSControlFrame</code>
-               - <code>WSFrame.Close</code>
-               - <code>WSFrame.Ping</code>
-               - <code>WSFrame.Pong</code>
-           - <code>WSDataFrame</code>
-               - <code>WSFrame.Text</code>
-               - <code>WSFrame.Binary</code></li>
+          <li>
+            <p><code>WSFrame</code></p>
+            <ul>
+              <li>
+                <p><code>WSControlFrame</code></p>
+                <ul>
+                  <li><code>WSFrame.Close</code></li>
+                </ul>
+                <ul>
+                  <li><code>WSFrame.Ping</code></li>
+                </ul>
+                <ul>
+                  <li><code>WSFrame.Pong</code></li>
+                </ul>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <p><code>WSDataFrame</code></p>
+                <ul>
+                  <li><code>WSFrame.Text</code></li>
+                </ul>
+                <ul>
+                  <li><code>WSFrame.Binary</code></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
         </ul>
         <p>There are two connection modes: &quot;low-level&quot; and &quot;high-level&quot;. Both manage the lifetime of a
         websocket connection via a <a href="https://typelevel.org/cats-effect/docs/std/resource"><code>Resource</code></a>.
